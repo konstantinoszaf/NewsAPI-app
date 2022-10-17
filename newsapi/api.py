@@ -1,11 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Blueprint
 from newsapi.provider.provider_api import call_news_api
 from newsapi.errors.provider_errors import NewsAPIError, UnknownError, NoKeyWordError
 
-app = Flask(__name__)
+api = Blueprint('api', __name__)
 
 
-@app.route('/news', methods=['POST'])
+@api.route('/news', methods=['POST'])
 def news_api():
     try:
         data = request.get_json()
