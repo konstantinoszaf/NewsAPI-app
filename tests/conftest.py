@@ -1,7 +1,7 @@
 import pytest
 import os
 import sys
-from flask import Flask
+
 from newsapi.app import create_app
 
 root = os.path.join(os.path.dirname(__file__))
