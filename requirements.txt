@@ -7,3 +7,4 @@ itsdangerous~=2.1.2
 setuptools~=44.0.0
 zipp~=3.9.0
 Flask~=2.2.2
+pre-commit

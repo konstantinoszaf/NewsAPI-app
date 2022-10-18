@@ -3,9 +3,9 @@ class NewsAPIError(Exception):
         self.errors = errors
 
 
-class UnknownError(Exception):
+class NoKeyWordError(Exception):
     pass
 
 
-class NoKeyWordError(Exception):
+class WrongKeyError(Exception):
     pass
