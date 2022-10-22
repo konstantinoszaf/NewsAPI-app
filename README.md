@@ -1,5 +1,7 @@
 NewsAPI Project
 ==============
+[![Checks](https://github.com/konstantinoszaf/NewsAPI-app/actions/workflows/lint.yml/badge.svg)](https://github.com/konstantinoszaf/NewsAPI-app/actions/workflows/lint.yml)
+
 [![Python tests](https://github.com/konstantinoszaf/NewsAPI-app/actions/workflows/testing.yml/badge.svg)](https://github.com/konstantinoszaf/NewsAPI-app/actions/workflows/testing.yml)
 
 This is a Flask app which has a single endpoint `POST/news`. The endpoint receives a keyword
@@ -36,8 +38,10 @@ For the *docker container* case:
 
 Then make an HTTP POST request with the following cURL command:
 ~~~
-curl -X POST -H "Content-Type: application/json" 172.17.0.1:5000/news -d '{"keyword": "user's keyword"}'
+curl -X POST -H "Content-Type: application/json" {docker's IP}:5000/news -d '{"keyword": "user's keyword"}'
 ~~~
+Docker's IP is 172.17.0.x (Flask will provide the exact address the app is running on.)
+
 Note that a keyword must be provided otherwise an exception is thrown.
 
 Some unit and integration tests utilizing the pytest framework tested the application's functionality.
