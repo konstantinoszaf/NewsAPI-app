@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, Blueprint
+from flask import jsonify, request, Blueprint
 from newsapi.provider.provider_api import call_news_api
 from newsapi.errors.provider_errors import NewsAPIError, NoKeyWordError, WrongKeyError
 

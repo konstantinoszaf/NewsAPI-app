@@ -1,0 +1,17 @@
+name: Checks
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Checks
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - run: pip install --upgrade pip
+    - run: pip install mypy==v0.982
+    - run: pip install -r requirements.txt
+    - run: mypy --install-types --non-interactive ./
+    - run: mypy run.py

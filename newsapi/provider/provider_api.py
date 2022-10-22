@@ -5,17 +5,11 @@ import requests
 
 
 def call_news_api(keyword: str) -> Tuple:
-    api_url = "https://newsapi.org/v2/everything"
 
-    request_data = {
-        "q": keyword,
-        "from": date.today(),
-        "sortBy": "popularity",
-        "apiKey": "e34c9fc42115415a8cfcb4acc9cf0d7c",
-        "pageSize": 1,
-    }
+    api_key = "e34c9fc42115415a8cfcb4acc9cf0d7c"
+    api_url = f"https://newsapi.org/v2/everything?q={keyword}&from={date.today()}&sortBy=popularity&apiKey={api_key}"
 
-    response = requests.get(api_url, params=request_data)
+    response = requests.get(api_url)
 
     if response.status_code == 200:
         data = response.json()
