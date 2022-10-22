@@ -1,5 +1,7 @@
 NewsAPI Project
 ==============
+[![Python package](https://github.com/konstantinoszaf/Newsapp/actions/workflows/linter.yml/badge.svg)](https://github.com/konstantinoszaf/Newsapp/actions/workflows/linter.yml)
+
 This is a Flask app which has a single endpoint `POST/news`. The endpoint receives a keyword
 in the form of JSON and makes an HTTP GET request to the [newsAPI](https://newsapi.org/) API.
 The response is the first article from the current date, sorted by popularity, that contains the
